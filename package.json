@@ -11,11 +11,7 @@
     "breakinto": "./src/cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "example:demo": "node examples/demo.js",
-    "example:circular": "node examples/circular_demo.js",
-    "example:hotfix": "node examples/hotfix_demo.js",
-    "example:server": "node examples/server_demo.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "debugger",
@@ -37,18 +33,18 @@
     "devtools"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com"
+    "name": "Yogendra Prajapati",
+    "email": "learning.yogendra@gmail.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/breakinto.git"
+    "url": "https://github.com/learningyogendra-netizen/breakinto.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/breakinto/issues"
+    "url": "https://github.com/learningyogendra-netizen/breakinto/issues"
   },
-  "homepage": "https://github.com/yourusername/breakinto#readme",
+  "homepage": "https://github.com/learningyogendra-netizen/breakinto#readme",
   "engines": {
     "node": ">=14.0.0"
   },
