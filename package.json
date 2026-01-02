@@ -1,0 +1,67 @@
+{
+  "name": "breakinto",
+  "version": "1.0.0",
+  "description": "A powerful interactive debugger for Node.js - pause execution, inspect variables, hot-patch code, and snapshot state into tests",
+  "main": "src/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "breakinto": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example:demo": "node examples/demo.js",
+    "example:circular": "node examples/circular_demo.js",
+    "example:hotfix": "node examples/hotfix_demo.js",
+    "example:server": "node examples/server_demo.js"
+  },
+  "keywords": [
+    "debugger",
+    "debug",
+    "repl",
+    "inspector",
+    "breakpoint",
+    "interactive",
+    "debugging",
+    "v8-inspector",
+    "pry",
+    "ipdb",
+    "runtime",
+    "inspection",
+    "hot-reload",
+    "snapshot",
+    "testing",
+    "development",
+    "devtools"
+  ],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/breakinto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/breakinto/issues"
+  },
+  "homepage": "https://github.com/yourusername/breakinto#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "acorn-walk": "^8.3.4",
+    "chalk": "^5.3.0",
+    "cli-highlight": "^2.1.11",
+    "ws": "^8.18.3"
+  },
+  "files": [
+    "src/**/*",
+    "README.md",
+    "LICENSE"
+  ]
+}
