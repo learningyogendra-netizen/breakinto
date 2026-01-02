@@ -1,6 +1,6 @@
 {
   "name": "breakinto",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful interactive debugger for Node.js - pause execution, inspect variables, hot-patch code, and snapshot state into tests",
   "main": "src/index.js",
   "type": "module",
