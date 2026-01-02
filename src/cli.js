@@ -99,19 +99,6 @@ function setupWs(ws) {
             process.exit(0);
         }
     });
-
-    ws.on('error', (error) => {
-        console.error(chalk.red('WebSocket error:'), error.message);
-        process.exit(1);
-    });
-
-    ws.on('close', (code, reason) => {
-        console.log(chalk.yellow(`\nDebugger connection closed (code: ${code})`));
-        if (reason) {
-            console.log(chalk.yellow(`Reason: ${reason}`));
-        }
-        process.exit(0);
-    });
 }
 
 function handlePaused(params) {
