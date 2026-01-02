@@ -41,7 +41,7 @@ async function processOrder(order) {
     const inventory = checkInventory(order.items);
     
     // 🛑 Pause here to inspect state
-    await breakinto();
+    breakinto();
     
     return finalizeOrder(user, inventory);
 }
@@ -57,7 +57,7 @@ node your-app.js
 
 ```
 Breakinto: Waiting for debugger connection on port 9847...
- > 15     await breakinto();
+ > 15     breakinto();
    16     
 breakinto> user
 { id: 42, name: 'Alice', email: 'alice@example.com' }
@@ -111,7 +111,7 @@ async function calculateDiscount(user, cart) {
     const discountRate = user.tier === 'premium' ? 0.2 : 0.1;
     
     // 🤔 Why is discount calculation wrong?
-    await breakinto();
+    breakinto();
     
     return basePrice * (1 - discountRate);
 }
@@ -140,7 +140,7 @@ breakinto> .continue
 import breakinto from 'breakinto';
 
 async function greet(name) {
-    await breakinto();
+    breakinto();
     return `Hello, ${name}!`;
 }
 
@@ -151,7 +151,7 @@ greet('World').then(console.log);
 ```bash
 breakinto> .whereami
   4     async function greet(name) {
-> 5         await breakinto();
+> 5         breakinto();
   6         return `Hello, ${name}!`;
   7     }
 
@@ -177,7 +177,7 @@ async function main() {
     };
     user.friends.push(user);  // Circular reference!
     
-    await breakinto();
+    breakinto();
 }
 
 main();
@@ -283,7 +283,7 @@ function outer() {
     const secret = 'hidden';
     
     async function inner() {
-        await breakinto();
+        breakinto();
         console.log(secret);
     }
     
@@ -307,7 +307,7 @@ const complexObj = {
 };
 complexObj.circular = complexObj;
 
-await breakinto();
+breakinto();
 ```
 
 ```bash
@@ -326,7 +326,7 @@ breakinto> complexObj
 async function fetchUserData(userId) {
     const user = await db.users.findOne({ id: userId });
     
-    await breakinto();
+    breakinto();
     
     const posts = await db.posts.find({ authorId: user.id });
     return { user, posts };
@@ -349,7 +349,7 @@ breakinto> await db.posts.count({ authorId: user.id })
 Add breakinto conditionally to debug production issues:
 ```javascript
 if (process.env.DEBUG_USER === userId) {
-    await breakinto();
+    breakinto();
 }
 ```
 
@@ -357,21 +357,21 @@ if (process.env.DEBUG_USER === userId) {
 Explore unfamiliar code by dropping breakpoints:
 ```javascript
 // What does this legacy function even do?
-await breakinto();
+breakinto();
 ```
 
 ### 3. **Test-Driven Debugging**
 Capture failing state as a test:
 ```javascript
 if (isUnexpectedState) {
-    await breakinto();  // .snap to create regression test
+    breakinto();  // .snap to create regression test
 }
 ```
 
 ### 4. **Live Code Experimentation**
 Try different approaches without restarting:
 ```javascript
-await breakinto();  // Edit algorithm in .reload
+breakinto();  // Edit algorithm in .reload
 ```
 
 ---
@@ -394,7 +394,7 @@ await breakinto();  // Edit algorithm in .reload
 **Solution:** Use the variable before calling `breakinto()` to prevent optimization:
 ```javascript
 console.log(myVar);  // Force V8 to keep it
-await breakinto();
+breakinto();
 ```
 
 ### Hot-Reload Not Working

@@ -7,7 +7,7 @@ import { join, dirname } from 'node:path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default async function breakinto(options = {}) {
+export default function breakinto(options = {}) {
     if (inspector.url()) {
         console.log('Breakinto: Inspector already open at', inspector.url());
         inspector.close();
