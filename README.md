@@ -1,8 +1,8 @@
 # 🛑 Breakinto
 
-**A powerful interactive debugger for Node.js, inspired by Ruby's `pry`**
+**Node.js Interactive Debugger with Hot-Reload & REPL-Driven Development**
 
-Drop into an interactive REPL at any point in your code to inspect variables, modify state, hot-patch functions, and capture reproducible test snapshots—all without restarting your application.
+Debug Node.js without restart! Drop into an interactive REPL at any point to inspect local variables at runtime, edit code while running, and generate tests from live state. A better alternative to `node inspect` and `console.log` debugging.
 
 [![Node.js](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -11,10 +11,10 @@ Drop into an interactive REPL at any point in your code to inspect variables, mo
 
 ## ✨ Features
 
-- **🔍 Interactive REPL** - Pause execution anywhere and explore your application state
-- **🎯 True Context Evaluation** - Access real local variables on the paused call stack via V8 Inspector Protocol
-- **🔥 Hot-Patching** - Edit source code and reload it instantly without restarting
-- **📸 Snap & Replay** - Serialize complex state (including circular refs) into Vitest/Jest test files
+- **🔍 Interactive REPL** - Pause execution anywhere and explore your application state with REPL-driven development
+- **🎯 True Context Evaluation** - Inspect local variables at runtime on the paused call stack via V8 Inspector Protocol
+- **🔥 Hot-Reload Debugging** - Edit code while running Node.js and reload it instantly without restarting your application
+- **📸 Snap & Replay** - Generate tests from live state: serialize complex objects (including circular refs) into Vitest/Jest test files
 - **👀 Code Context** - View surrounding source code with syntax highlighting
 - **🎨 Beautiful Output** - Colorized terminal output with chalk
 - **🏗️ Split-Process Architecture** - Robust separation between debugged app and CLI tool
@@ -340,6 +340,31 @@ breakinto> user
 breakinto> await db.posts.count({ authorId: user.id })
 15  # Run async queries in the REPL!
 ```
+
+---
+
+## 🆚 Why Choose Breakinto?
+
+### Better Than `console.log` Debugging
+- **No more restart cycles** - Modify variables and test fixes instantly
+- **Full context access** - See all local variables, not just what you logged
+- **Interactive exploration** - Run any expression in the paused context
+- **Professional workflow** - Generate reproducible tests from debugging sessions
+
+### Alternative to `node inspect`
+- **Automatic setup** - No need to restart with `--inspect` flag
+- **Better UX** - Colorized output, syntax highlighting, and intuitive commands
+- **Runtime inspection** - Drop breakpoints anywhere in running code
+- **Hot-reload capability** - Edit and reload code without restarting the debugger
+- **REPL-driven development** - Interactive workflow similar to Ruby's `pry` and Python's `ipdb`
+
+### Debug Node.js Without Restart
+Stop wasting time in the edit-restart-debug cycle:
+1. Add `breakinto()` where you need to inspect
+2. Run your app normally (no special flags needed)
+3. Inspect local variables, modify state, and test fixes interactively
+4. Hot-reload your changes and continue debugging
+5. Generate test snapshots from live state
 
 ---
 
