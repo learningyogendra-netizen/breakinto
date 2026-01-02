@@ -1,4 +1,4 @@
-# 🛑 Breakinto
+# 🛑 Breakinto: Interactive Node.js Debugger for Runtime Inspection
 
 **Node.js Interactive Debugger with Hot-Reload & REPL-Driven Development**
 
